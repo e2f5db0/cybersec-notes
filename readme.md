@@ -14,7 +14,7 @@ This repo is for general tips & tricks gathered from CTFs, books, home lab tests
 
 #### 🛠️ Tools & Services
 
-- [CrackStation](https://hashes.com/en/decrypt/hash) – Rainbow tables
+- [CrackStation](https://crackstation.net/) – Rainbow tables
 - [Hashes.com](https://hashes.com/en/decrypt/hash) – Rainbow tables
   - [hash identifier](https://hashes.com/en/tools/hash_identifier)
 - [SecLists](https://github.com/danielmiessler/SecLists)
