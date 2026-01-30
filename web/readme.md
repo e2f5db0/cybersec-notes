@@ -1,10 +1,8 @@
 # Pentest checklist for web
 
-- **Automated overall rating**
-    - SSL report
-        - ssllabs.com/ssltest
-    - Are headers set correctly?
-        - securityheaders.com
+- **Automation**
+    - [SSL report](https://ssllabs.com/ssltest)
+    - [Are headers set correctly?](https://securityheaders.com)
     - OWASP ZAP automated test
 
 ---
