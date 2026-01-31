@@ -20,6 +20,8 @@ This repo is for general tips & tricks gathered from CTFs, books, home lab tests
 - [SecLists](https://github.com/danielmiessler/SecLists)
 - [Jumbo John (the ripper)](https://github.com/openwall/john)
 - [mimikatz](https://github.com/gentilkiwi/mimikatz)
+- [Javascript Obfuscator](https://codebeautify.org/javascript-obfuscator)
+- [Javascript Deobfuscator](https://obf-io.deobfuscate.io/)
 
 #### 🔍 Vulnerability & Exploit Databases
 - attack.mitre.org
