@@ -33,7 +33,7 @@ Enumerate different websites on the same machine.
 | Flag | Description |
 | ---- | ----------- |
 | -u   | base url or IP |
-| --domain | appends domain to each wordlist entry. Useful if base url is an IP address. |
+| --domain | appends domain to each wordlist entry. Useful if base url is an IP address. Otherwise the domain is populated from the base url automatically. |
 | --append-domain | appends the base domain to each word in the wordlist (e.g. word.example.com) |
 | -m | specifies the HTTP method (e.g. GET, POST) |
 | --exclude-length | excludes results based on the length of the response body. Useful to filter out unwanted responses like 404. |
