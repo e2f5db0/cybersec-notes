@@ -41,3 +41,30 @@ Many passwords used in the healthcare industry are something like "Fall2026" or 
 First letters are typically capitalized and the special character is "!" at the end of the password. (i.e. Polopassword1!)
 
 -----------------------------------------------------
+
+## Hydra
+
+### ssh
+
+`hydra -l <username> -P wordlists/passwords.txt <domain_or_ip> -t 4 ssh`
+
+| option | Description |
+| ------ | ----------- |
+| -l     | specifies the username for login |
+| -P     | indicates a list of passwords |
+| -t     | sets the number of threads to spawn |
+
+### Web form
+
+`sudo hydra -l <username> -P <wordlist> <domain_or_ip> http-post-form "<path>:<login_credentials>:<invalid_response>"`
+
+| option | Description |
+| ------ | ----------- |
+| -http-post-form | type of the form is POST |
+| < path > | the login page URL, for example `login.php` |
+| <login_credentials> | username and password, for example `username=^USER^&password=^PASS^` |
+| <invalid_response> | part of the response when the login fails |
+| -V | verbose output for every attempt |
+| -s | optional port number |
+
+`hydra -l <username> -P <wordlist> <domain> http-post-form "/login:username=^USER^&password=^PASS^:F=incorrect" -V`
