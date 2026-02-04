@@ -23,6 +23,13 @@ This repo is for general tips & tricks gathered from CTFs, books, home lab tests
 - [Javascript Obfuscator](https://codebeautify.org/javascript-obfuscator)
 - [Javascript Deobfuscator](https://obf-io.deobfuscate.io/)
 
+#### 👽 Web shells
+
+- [p0wny-shell](https://github.com/flozz/p0wny-shell)
+- [b374k-shell](https://github.com/b374k/b374k)
+- [c99-shell](https://www.r57shell.net/single.php?id=13)
+- [r57shell](https://www.r57shell.net/index.php)
+
 #### 🔍 Vulnerability & Exploit Databases
 - attack.mitre.org
 - exploit-db.com
