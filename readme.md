@@ -14,6 +14,7 @@ This repo is for general tips & tricks gathered from CTFs, books, home lab tests
 
 #### 🛠️ Tools & Services
 
+- [CyberChef](https://gchq.github.io/CyberChef/)
 - [CrackStation](https://crackstation.net/) – Rainbow tables
 - [Hashes.com](https://hashes.com/en/decrypt/hash) – Rainbow tables
   - [hash identifier](https://hashes.com/en/tools/hash_identifier)
