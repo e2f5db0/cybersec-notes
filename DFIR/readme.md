@@ -1,6 +1,6 @@
 # Notes on Digital Forensics and Incident Response
 
-### 🛠️ Tools & Services
+### Disk images
 
 - FTK Imager – disk images of Windows operating systems
 - [Autopsy](https://www.autopsy.com/) – open-source digital forensics platform, conduct an extensive analysis of an image
@@ -28,7 +28,9 @@
 - /var/log/auth.log and /var/log/secure: Stores authentication-related logs.
 - /var/log/kern: This file stores kernel-related events.
 
-### Malware analysis / Reversing
+## Malware analysis / Reversing
+
+- [REMnux VM](https://remnux.org/) – A linux toolkit for malware analysis
 
 #### Static analysis
 - [CAPA](https://github.com/mandiant/capa) – detects capabilities in executable files (open-source)
