@@ -1,5 +1,8 @@
 # Systems hacking stages (windows)
 
+### 🛠️ Tools
+- [mimikatz](https://github.com/gentilkiwi/mimikatz)
+
 ## Information gathering
 
 ```bash

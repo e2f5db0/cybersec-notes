@@ -1,7 +1,8 @@
 # Notes on Digital Forensics and Incident Response
 
-OS imaging / analysis tools:
+### 🛠️ Tools & Services
 
+- [CyberChef](https://gchq.github.io/CyberChef/)
 - FTK Imager – disk images of Windows operating systems
 - [Autopsy](https://www.autopsy.com/) – open-source digital forensics platform, conduct an extensive analysis of an image
 - [DumpIt](https://www.toolwar.com/2014/01/dumpit-memory-dump-tools.html) – for taking a memory image from a Windows OS
@@ -27,3 +28,10 @@ OS imaging / analysis tools:
 - /var/log/cron: Events related to cron jobs are stored in this location.
 - /var/log/auth.log and /var/log/secure: Stores authentication-related logs.
 - /var/log/kern: This file stores kernel-related events.
+
+### Malware analysis / Reversing
+
+- [CAPA](https://github.com/mandiant/capa) – detects capabilities in executable files (open-source)
+- [CAPA analysis web explorer](https://mandiant.github.io/capa/explorer/#/)
+- [Javascript Obfuscator](https://codebeautify.org/javascript-obfuscator)
+- [Javascript Deobfuscator](https://obf-io.deobfuscate.io/)

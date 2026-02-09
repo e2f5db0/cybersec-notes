@@ -1,17 +1,22 @@
 # Notes on cracking password hashes
 
+### 🛠️ Tools & services
+- [Jumbo John (the ripper)](https://github.com/openwall/john)
+- [hashcat](https://hashcat.net/hashcat/)
+  - [hashcat hash types](https://hashcat.net/wiki/doku.php?id=example_hashes)
+- [CrackStation](https://crackstation.net/) – Rainbow tables
+- [Hashes.com](https://hashes.com/en/decrypt/hash) – Rainbow tables
+  - [hash identifier](https://hashes.com/en/tools/hash_identifier)
+- [SecLists (wordlists)](https://github.com/danielmiessler/SecLists)
+
+--------------------------------------------------------------------
+
 Getting the hash type:
 
 ```bash
 # pre-installed in Kali distributions
 $ hash-identifier [hash]
 ```
-
-Online tools:
-
-- [CrackStation](https://hashes.com/en/decrypt/hash) – Rainbow tables
-- [Hashes.com](https://hashes.com/en/decrypt/hash) – Rainbow tables
-  - [hashes.com hash identifier tool](https://hashes.com/en/tools/hash_identifier)
 
 ----------------------------------------------------------
 

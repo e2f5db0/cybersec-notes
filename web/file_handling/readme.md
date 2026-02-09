@@ -2,6 +2,11 @@
 
 ## Web shells
 
+- [p0wny-shell](https://github.com/flozz/p0wny-shell)
+- [b374k-shell](https://github.com/b374k/b374k)
+- [c99-shell](https://www.r57shell.net/single.php?id=13)
+- [r57shell](https://www.r57shell.net/index.php)
+
 Managing to upload the following .php file to a web server with a file upload vulnerability results in RCE if the webserver can run php. The code takes a GET parameter and executes it as a system command. It then echoes the output out to the screen.
 
 ```php
