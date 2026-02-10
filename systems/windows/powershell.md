@@ -30,3 +30,9 @@
 `Move-Item -Path "<from>" -Destination "<to>"` (mv) – move items
 
 `Select-String -Path "<path>" -Pattern "example"` – search text pattern within files (regex support)
+
+## Malicious behaviour
+
+`powershell -WindowStyle hidden` – hide the powershell window, useful when running a malicious script
+
+`powershell -executionpolicy bypass` – temporarily ignore the script execution restriction in powershell
