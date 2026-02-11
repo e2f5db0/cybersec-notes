@@ -6,6 +6,7 @@
 - [Autopsy](https://www.autopsy.com/) – open-source digital forensics platform, conduct an extensive analysis of an image
 - [DumpIt](https://www.toolwar.com/2014/01/dumpit-memory-dump-tools.html) – for taking a memory image from a Windows OS
 - [Volatility](https://volatilityfoundation.org/) – open-source tool for analyzing memory images
+- Rekall - Framework for memory forensics in incident response.
 
 ### Windows Event Viewer
 
@@ -28,16 +29,38 @@
 - /var/log/auth.log and /var/log/secure: Stores authentication-related logs.
 - /var/log/kern: This file stores kernel-related events.
 
-## Malware analysis / Reversing
+## Malware analysis / Reversing / Debugging
 
 - [REMnux VM](https://remnux.org/) – A linux toolkit for malware analysis
+- FlareVM – has most of the tools listed below
 
 ### Static analysis
+
 - [CAPA](https://github.com/mandiant/capa) – detects capabilities in executable files (open-source)
 - [CAPA analysis web explorer](https://mandiant.github.io/capa/explorer/#/)
 - [Javascript Obfuscator](https://codebeautify.org/javascript-obfuscator)
 - [Javascript Deobfuscator](https://obf-io.deobfuscate.io/)
 - [CyberChef](https://gchq.github.io/CyberChef/)
+- Ghidra - NSA-developed open-source reverse engineering suite.
+- x64dbg - Open-source debugger for binaries in x64 and x32 formats.
+- OllyDbg - Debugger for reverse engineering at the assembly level.
+- Radare2 - A sophisticated open-source platform for reverse engineering.
+- Binary Ninja - A tool for disassembling and decompiling binaries.
+- PEiD - Packer, cryptor, and compiler detection tool.
+- PEStudio – study executable file properties
+
+#### Disassemblers & Decompilers
+
+- CFF Explorer - A PE editor designed to analyze and edit Portable Executable (PE) files.
+- Hopper Disassembler - A Debugger, disassembler, and decompiler.
+- RetDec - Open-source decompiler for machine code.
+
+#### File Analysis
+
+- FileInsight - A program for looking through and editing binary files.
+- Hex Fiend - Hex editor that is light and quick.
+- HxD - Binary file viewing and editing with a hex editor.
+
 
 #### Oledump.py
 
@@ -106,7 +129,15 @@ strings -e b IMAGE_FILE.mem > IMAGE_FILE.strings.ascii.txt
 
 ### Dynamic Analysis
 
-REMnux contains the INetSim: Internet Services Simulation Suite that can be used to analyze the network traffic a malicious software tries to generate.
+- Process Hacker - Sophisticated memory editor and process watcher.
+- PEview - A portable executable (PE) file viewer for analysis.
+- Dependency Walker - A tool for displaying an executable’s DLL dependencies.
+- DIE (Detect It Easy) - A packer, compiler, and cryptor detection tool.
+- Process Monitor (procmon) – See how executables behave in the system
+
+#### INetSim
+
+Internet Services Simulation Suite that can be used to analyze the network traffic a malicious software tries to generate.
 
 The config file is located in /etc/inetsim/inetsim.conf
 
@@ -114,3 +145,4 @@ The config file is located in /etc/inetsim/inetsim.conf
 # inetsim will generate a report in /var/log/inetsim/report after stopping the simulation
 sudo inetsim
 ```
+
