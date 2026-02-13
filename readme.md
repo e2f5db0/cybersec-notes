@@ -12,6 +12,8 @@ This repo is for general tips & tricks gathered from CTFs, books, home lab tests
 
 ### Resources
 
+- [CyberChef](https://gchq.github.io/CyberChef/)
+
 #### 🔍 Vulnerability & Exploit Databases
 - attack.mitre.org
 - exploit-db.com
