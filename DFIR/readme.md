@@ -1,5 +1,7 @@
 # Notes on Digital Forensics and Incident Response
 
+- [AbuseIPDB](https://www.abuseipdb.com) – open-source database for known malicious IPs
+
 ### Disk images
 
 - FTK Imager – disk images of Windows operating systems

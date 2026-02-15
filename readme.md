@@ -14,6 +14,12 @@ This repo is for general tips & tricks gathered from CTFs, books, home lab tests
 
 - [CyberChef](https://gchq.github.io/CyberChef/)
 
+#### 📰 Security News
+
+- [Krebs on Security](https://krebsonsecurity.com/)
+- [The Hacker News](https://thehackernews.com/)
+- [BleepingComputer](https://www.bleepingcomputer.com/)
+
 #### 🔍 Vulnerability & Exploit Databases
 - attack.mitre.org
 - exploit-db.com
