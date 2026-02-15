@@ -19,56 +19,56 @@ This repo is for general tips & tricks gathered from CTFs, books, home lab tests
 - [Krebs on Security](https://krebsonsecurity.com/)
 - [The Hacker News](https://thehackernews.com/)
 - [BleepingComputer](https://www.bleepingcomputer.com/)
+- [The DFIR Report](https://thedfirreport.com/reports/)
 
 #### 🔍 Vulnerability & Exploit Databases
-- attack.mitre.org
-- exploit-db.com
-- cve.org
-- lolbas-project.github.io
+- [MITRE ATT&CK](https://attack.mitre.org)
+- [ExploitDB](https://exploit-db.com)
+- [cve.org](https://cve.org)
+- [Lolbas](https://lolbas-project.github.io)
+- [CISA: Known Exploited  Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
 
 #### 🎯 CTF Platforms & Challenges
-- ctftime.org
-- hextree.io
-- ctf.hacker101.com
-- picoctf.org
-- ctflearn.com
-- ctf.komodosec.com
-- ctf101.org
+- [CTF Time](https://ctftime.org)
+- [HexTree](https://hextree.io)
+- [Hacker101](https://ctf.hacker101.com)
+- [PicoCTF](https://picoctf.org)
+- [CTFLearn](https://ctflearn.com)
+- [Komodosec CTF](https://ctf.komodosec.com)
+- [CTF101](https://ctf101.org)
 
 #### 🏋️ Practice & Wargames
-- pwn.college
-- pwnable.tw
-- pwnable.kr
-- microcorruption.com
-- reversing.kr
-- hax.tor.hu
-- w3challs.com
-- pwn0.com
-- io.netgarage.org
-- ringer0team.com
-- hellboundhackers.org
-- overthewire.org/wargames
-- hackthissite.org
-- pwnadventure.com
+- [PwnCollege](https://pwn.college)
+- [Pwnable.tw](https://pwnable.tw)
+- [Pwable.kr](https://pwnable.kr)
+- [MicroCorruption](https://microcorruption.com)
+- [Reversing.kr](https://reversing.kr)
+- [hax.tor.hu](https://hax.tor.hu)
+- [w3challs](https://w3challs.com)
+- [pwn0](https://pwn0.com)
+- [io.netgarage.org](https://io.netgarage.org)
+- [ringer0team](https://ringer0team.com)
+- [HellboundHackers](https://hellboundhackers.org)
+- [OverTheWire](https://overthewire.org/wargames)
+- [HackThisSite](https://hackthissite.org)
+- [PwnAdventure](https://pwnadventure.com)
 
 #### 📚 Learning Platforms
-- kc7cyber.com
-- tryhackme.com
-- penterterlab.com
-- vulnhub.com
-- counterhack.net/Counter_Hack/Challenges.html
+- [K7 Cyber](https://kc7cyber.com)
+- [TryHackMe](https://tryhackme.com)
+- [PentesterLab](https://penterterlab.com)
+- [Vulnhub](https://vulnhub.com)
+- [CounterHack](https://counterhack.net/Counter_Hack/Challenges.html)
 
 #### 🦠 Malware & Binary Analysis
-- malware-traffic-analysis.net
-- crackmes.one
-- maxkersten.nl/binary-analysis-course
+- [Malware Traffic Analysis](https://malware-traffic-analysis.net)
+- [crackmes](https://crackmes.one)
+- [Binary Analysis – Max Kersten](https://maxkersten.nl/binary-analysis-course)
 
 #### 🏢 Professional Training & Certifications
-- Black Hills Information Security
-    - https://www.blackhillsinfosec.com/services/cyber-range/
-- SANS
-    - https://www.sans.org/cyber-security-skills-roadmap/
-- itpro.tv
+- [Black Hills Information Security](https://www.blackhillsinfosec.com/services/cyber-range/)
+- [SANS](https://www.sans.org/cyber-security-skills-roadmap/)
+- [ITPro](itpro.tv)
 
 #### 🎧 Podcasts
 - Sans StormCast
