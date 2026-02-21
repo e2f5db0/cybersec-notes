@@ -22,11 +22,15 @@ tip: pipe output to `more` or `less` for better UX on the CLI
 
 `ver` – OS version
 
+`net localgroup administrator` – list users in the Adminitrator group
+
 `sysinfo` – various info about the system
 
 `driverquery` – list of installed device drivers
 
 `ipconfig /all` – network information
+
+`net start` – list all running services
 
 `tracert` – trace route for network packets
 
