@@ -1,6 +1,14 @@
 # Notes on Digital Forensics and Incident Response
 
+Resources
+
 - [AbuseIPDB](https://www.abuseipdb.com) – open-source database for known malicious IPs
+- [VirusTotal](https://www.virustotal.com/gui) – malware hash lookups
+- [Metadefender OPSWAT](https://metadefender.opswat.com) – malware hash lookups
+- [TrueURL] – https://trueurl.com/ – Check URL Redirects
+- [Malware Bazaar](https://bazaar.abuse.ch/)
+- [SOC Prime Threat Detection Marketplace](https://tdm.socprime.com/)
+- [SSDeep Fuzzy Hashing](https://ssdeep-project.github.io/ssdeep/index.html) – match two files with minor differences
 
 ### Disk images
 
@@ -148,3 +156,14 @@ The config file is located in /etc/inetsim/inetsim.conf
 sudo inetsim
 ```
 
+## Network analysis
+
+If you can detect the custom User-Agent strings that the attacker is using, you might be able to block them, creating more obstacles and making their attempt to compromise the network more annoying.
+
+### tshark
+
+```bash
+# Filter out the User-Agent strings from HTTP requests.
+# 
+tshark --Y http.request -T fields -e http.host -e http.user_agent -r analysis_file.pcap
+```
