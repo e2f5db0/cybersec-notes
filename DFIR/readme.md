@@ -2,13 +2,23 @@
 
 Resources
 
-- [AbuseIPDB](https://www.abuseipdb.com) – open-source database for known malicious IPs
+- [URLScan](https://urlscan.io/) – URL sandbox
+- [URL2PNG](https://www.url2png.com/) – URL sandbox
+- [Wannabrowser](https://www.wannabrowser.net/) – URL sandbox
+- [Link Reputation – Talos](https://talosintelligence.com/reputation)
+- [File Reputation – Talos](https://talosintelligence.com/talos_file_reputation)
 - [VirusTotal](https://www.virustotal.com/gui) – malware hash lookups
+- [AbuseIPDB](https://www.abuseipdb.com) – open-source database for known malicious IPs
 - [Metadefender OPSWAT](https://metadefender.opswat.com) – malware hash lookups
 - [TrueURL] – https://trueurl.com/ – Check URL Redirects
+- [Email header analysis tool](https://mha.azurewebsites.net/)
+- [EML Analyzer](https://eml-analyzer.herokuapp.com/)
 - [Malware Bazaar](https://bazaar.abuse.ch/)
 - [SOC Prime Threat Detection Marketplace](https://tdm.socprime.com/)
 - [SSDeep Fuzzy Hashing](https://ssdeep-project.github.io/ssdeep/index.html) – match two files with minor differences
+- [Any.Run](https://app.any.run/)
+- [Hybrid Analysis](https://www.hybrid-analysis.com/) – Malware analysis service
+- [JoeSecurity](https://www.joesecurity.org/) – Malware analysis service
 
 ### Disk images
 
