@@ -13,6 +13,7 @@ Resources
 - [TrueURL] – https://trueurl.com/ – Check URL Redirects
 - [Email header analysis tool](https://mha.azurewebsites.net/)
 - [EML Analyzer](https://eml-analyzer.herokuapp.com/)
+- [SPF Surveyor](https://dmarcian.com/spf-survey/)
 - [Malware Bazaar](https://bazaar.abuse.ch/)
 - [SOC Prime Threat Detection Marketplace](https://tdm.socprime.com/)
 - [SSDeep Fuzzy Hashing](https://ssdeep-project.github.io/ssdeep/index.html) – match two files with minor differences
