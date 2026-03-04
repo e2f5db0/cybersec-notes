@@ -7,7 +7,8 @@ Resources
 - [Wannabrowser](https://www.wannabrowser.net/) – URL sandbox
 - [Link Reputation – Talos](https://talosintelligence.com/reputation)
 - [File Reputation – Talos](https://talosintelligence.com/talos_file_reputation)
-- [VirusTotal](https://www.virustotal.com/gui) – malware hash lookups
+- [VirusTotal](https://www.virustotal.com/) – malware hash lookups
+- [ThreatBook](https://threatbook.io/) – Threat Intelligence Lookup for URLs
 - [AbuseIPDB](https://www.abuseipdb.com) – open-source database for known malicious IPs
 - [Metadefender OPSWAT](https://metadefender.opswat.com) – malware hash lookups
 - [TrueURL] – https://trueurl.com/ – Check URL Redirects
