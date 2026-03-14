@@ -46,6 +46,30 @@ Resources
 
 ### Linux logs
 
+Log handling:
+
+Let's say we have a firewall log like so:
+
+```bash
+head firewall.log
+# 2025-08-25 00:47:46 ALLOW TCP 198.51.100.77:60317 -> 10.0.0.50:443
+# 2025-08-25 01:29:33 ALLOW TCP 203.0.113.100:62718 -> 10.0.0.60:443
+# 2025-08-25 01:42:12 ALLOW TCP 203.0.113.100:55875 -> 10.0.0.51:80
+# 2025-08-25 03:30:47 ALLOW TCP 198.51.100.77:63035 -> 10.0.0.20:80
+# 2025-08-25 04:06:58 ALLOW TCP 192.0.2.115:65458 -> 10.0.0.20:25
+```
+
+We can isolate particular fields by splitting every " ":
+
+```bash
+# -f5: select the fifth field after splitting
+# sort -nr: sort numerically reversed
+# uniq -c: count unique fields (IPs in this case)
+cat firewall.log | grep "BLOCK" | cut -d " " -f5 | cut -d: -f1 | sort -nr | uniq -c
+```
+
+General Linux log file locations:
+
 - /var/log/httpd: Contains HTTP Request  / Response and error logs.
 - /var/log/cron: Events related to cron jobs are stored in this location.
 - /var/log/auth.log and /var/log/secure: Stores authentication-related logs.
