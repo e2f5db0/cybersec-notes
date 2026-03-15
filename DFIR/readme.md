@@ -68,6 +68,13 @@ We can isolate particular fields by splitting every " ":
 cat firewall.log | grep "BLOCK" | cut -d " " -f5 | cut -d: -f1 | sort -nr | uniq -c
 ```
 
+If a log file is unsanitized & without clear columns, it's a good idea to `cut` the file into columns using a delimiter found in the file:
+
+```bash
+# cut the csv log file into six columns using "," as the delimiter
+cat log-session-1.csv | cut -d "," -f1,2,3,4,5,6
+```
+
 General Linux log file locations:
 
 - /var/log/httpd: Contains HTTP Request  / Response and error logs.
