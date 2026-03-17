@@ -210,3 +210,9 @@ If you can detect the custom User-Agent strings that the attacker is using, you 
 # 
 tshark --Y http.request -T fields -e http.host -e http.user_agent -r analysis_file.pcap
 ```
+
+### Wireshark
+
+`Ctrl + Alt + 1` – Display timestamps in UTC format in pcap files
+
+Filter `_ws.col.info contains "keyword"` to refer to the info column 
