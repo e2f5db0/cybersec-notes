@@ -30,19 +30,28 @@ Resources
 - [Volatility](https://volatilityfoundation.org/) – open-source tool for analyzing memory images
 - Rekall - Framework for memory forensics in incident response.
 
-### Windows Event Viewer
+### Windows logs & Event Viewer
 
-| Event ID | Description |
-| -------- | ----------- |
-| 4624     | A user account successfully logged in |
-| 4625     | A user account failed to login |
-| 4634     | A user account successfully logged off |
-| 4720     | A user account was created |
-| 4724     | An attempt was made to reset an account’s password |
-| 4722     | A user account was enabled |
-| 4725     | A user account was disabled |
-| 4726     | A user account was deleted |
-| 104      | Event log was cleared |
+Windows logs (.evtx – binary format) are stored at: 
+`C:\Windows\System32\winevt\Logs`
+
+Event Viewer IDs:
+
+`Win + R` --> `eventvwr`
+
+| Event ID | Description | Sub-fields |
+| -------- | ----------- | ---------- |
+| 4624     | A user account successfully logged in | Logon Type: 10 = RDP, 3 = Network |
+| 4625     | A user account failed to login | - |
+| 4634     | A user account successfully logged off | - |
+| 4720     | A user account was created | - |
+| 4724     | An attempt was made to reset an account’s password | - |
+| 4722     | A user account was enabled | - |
+| 4725     | A user account was disabled | - |
+| 4726     | A user account was deleted | - |
+| 104      | Event log was cleared | - |
+
+Event ID 2624 (Successull logins) have a Logon ID which is a unique session identifier. Save it for further analysis.
 
 ### Linux logs
 
