@@ -45,13 +45,31 @@ Event Viewer IDs:
 | 4625     | A user account failed to login | - |
 | 4634     | A user account successfully logged off | - |
 | 4720     | A user account was created | - |
+| 4722     | A user changed their password | - |
+| 4723     | A user account was enabled | - |
 | 4724     | An attempt was made to reset an account’s password | - |
-| 4722     | A user account was enabled | - |
 | 4725     | A user account was disabled | - |
 | 4726     | A user account was deleted | - |
+| 4732     | A user was added to a security group | - |
+| 4733     | A user was removed from a security group | - |
+| 4738     | A user account was changed | - |
 | 104      | Event log was cleared | - |
 
 Event ID 2624 (Successull logins) have a Logon ID which is a unique session identifier. Save it for further analysis.
+
+#### Sysmon
+
+Once installed, sysmon logs can be found in Event Viewer under `Applications & Services -> Microsoft -> Windows -> Sysmon -> Operational` 
+
+| Event ID | Description |
+| -------- | ----------- |
+| 1        | Process creation |
+
+#### Powershell history
+
+Poweshell history file location:
+
+`C:\Users\<USER>\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt`
 
 ### Linux logs
 
