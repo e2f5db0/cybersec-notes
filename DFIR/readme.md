@@ -59,7 +59,7 @@ Event ID 2624 (Successull logins) have a Logon ID which is a unique session iden
 
 #### Sysmon
 
-Once installed, sysmon logs can be found in Event Viewer under `Applications & Services -> Microsoft -> Windows -> Sysmon -> Operational` 
+Once installed, sysmon logs can be found in Event Viewer under `Applications & Services Logs -> Microsoft -> Windows -> Sysmon -> Operational` 
 
 | Event ID | Description |
 | -------- | ----------- |

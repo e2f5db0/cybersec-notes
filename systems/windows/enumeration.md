@@ -22,9 +22,13 @@ tip: pipe output to `more` or `less` for better UX on the CLI
 
 `ver` – OS version
 
+`net user` – user details
+
+`query user` – user details
+
 `net localgroup administrator` – list users in the Adminitrator group
 
-`sysinfo` – various info about the system
+`sysinfo` `systeminfo` – various info about the system
 
 `driverquery` – list of installed device drivers
 
@@ -42,7 +46,11 @@ tip: pipe output to `more` or `less` for better UX on the CLI
   - `-o` process ID (PID) associated with the connection
   - `-n` uses a numerical form for addresses and port numbers
 
-`tasklist` – list running processes
+`netsh` – network info
+
+`advfirewall show allprofiles` – corporate network firewall?
+
+`tasklist /v` – list running processes
 
 `taskkill /PID <target_pid>` – kill target process
 
@@ -75,7 +83,11 @@ tip: pipe output to `more` or `less` for better UX on the CLI
 
 `Get-FileHash -Path <filepath>` – generate file hashes
 
+`Get-Content <file>` – display file contents
+
 `Get-Item -Path "<filepath>" -Stream *` – view the Alternate Data Streams (ADS) attached to a file
 
 `Invoke-Command -FilePath <filepath>` – executes commands on remote (or local) machines
   - `Invoke-Command -ComputerName Server01 -Credential Domain01\User01 -ScriptBlock { <cmdlet_name> }` (remote machine in Active Directory domain)
+
+`Get-WmiObject -Namespace "root\SecurityCenter2" -Query "SELECT * FROM AntivirusProduct"` – See active antivirus
