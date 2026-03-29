@@ -91,3 +91,38 @@ tip: pipe output to `more` or `less` for better UX on the CLI
   - `Invoke-Command -ComputerName Server01 -Credential Domain01\User01 -ScriptBlock { <cmdlet_name> }` (remote machine in Active Directory domain)
 
 `Get-WmiObject -Namespace "root\SecurityCenter2" -Query "SELECT * FROM AntivirusProduct"` – See active antivirus
+
+### Exfiltration
+
+```powershell
+# Archive data for exfiltration
+Compress-Archive "C:\Temp\ C:\Temp\data-to-exfiltrate.zip"
+# 7-Zip
+7za.exe a -tzip "C:\Temp\data-to-exfiltrate.zip" "C:\\Temp\\*.*"
+
+# Clipboard
+Get-ClipBoard > "C:\Temp\clipboard.txt"
+
+# xcopy
+xcopy "%%userprofile%%\Desktop\*.txt" "%%temp%%\exfil_dir /i /s /y"
+
+# SSH credentials
+"C:\Users\<user>\.ssh\*"
+
+# Databases
+"C:\Program Files\Microsoft SQL Server\...\DATA\*"
+
+# List PDF & .docx & .xlsx files in home directory
+Get-ChildItem "C:\Users\<user> -Recurse -Filter *.pdf"
+
+# Bitcoin wallet file
+"C:\Users\<user>\AppData\Roaming\Bitcoin\wallet.dat"
+
+# Signal messaging data
+"C:\Users\<user>\AppData\Roaming\Signal\*"
+
+#Browser history & Cookies
+"C:\Users\<user>\AppData\Local\Google\Chrome\User Data\Default\History"
+"C:\Users\<user>\AppData\Local\Google\Chrome\User Data\Default\Cookies"
+"%%localappdata%%\Google\Chrome\User Data\Default"
+```
