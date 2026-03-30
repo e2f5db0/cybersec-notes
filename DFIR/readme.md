@@ -41,18 +41,20 @@ Event Viewer IDs:
 
 | Event ID | Description | Sub-fields |
 | -------- | ----------- | ---------- |
-| 4624     | A user account successfully logged in | Logon Type: 10 = RDP, 3 = Network |
-| 4625     | A user account failed to login | - |
-| 4634     | A user account successfully logged off | - |
-| 4720     | A user account was created | - |
-| 4722     | A user changed their password | - |
-| 4723     | A user account was enabled | - |
-| 4724     | An attempt was made to reset an account’s password | - |
-| 4725     | A user account was disabled | - |
-| 4726     | A user account was deleted | - |
-| 4732     | A user was added to a security group | - |
-| 4733     | A user was removed from a security group | - |
-| 4738     | A user account was changed | - |
+| 4624     | User account successfully logged in | Logon Type: 10 = RDP, 3 = Network |
+| 4625     | User account failed to login | - |
+| 4634     | User account successfully logged off | - |
+| 4697     | Service was created | - |
+| 4698     | Scheduled task was created | - |
+| 4720     | User account was created | - |
+| 4722     | User changed their password | - |
+| 4723     | User account was enabled | - |
+| 4724     | Attempt was made to reset an account’s password | - |
+| 4725     | User account was disabled | - |
+| 4726     | User account was deleted | - |
+| 4732     | User was added to a security group | - |
+| 4733     | User was removed from a security group | - |
+| 4738     | User account was changed | - |
 | 104      | Event log was cleared | - |
 
 Event ID 2624 (Successull logins) have a Logon ID which is a unique session identifier. Save it for further analysis.
