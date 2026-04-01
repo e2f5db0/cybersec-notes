@@ -2,6 +2,7 @@
 
 Resources
 
+- [auditd rules](https://github.com/Neo23x0/auditd/blob/master/audit.rules)
 - [URLScan](https://urlscan.io/) – URL sandbox
 - [URL2PNG](https://www.url2png.com/) – URL sandbox
 - [Wannabrowser](https://www.wannabrowser.net/) – URL sandbox
@@ -75,7 +76,21 @@ Poweshell history file location:
 
 ### Linux logs
 
-Log handling:
+Bash commands with a leading space will not be included in .bash_history. Shells such as /bin/sh do not save history at all.
+
+#### auditd
+
+`/var/log/audit/audit.log` is easier to read via the `ausearch` command.
+
+`ausearch -i -k proc_wget` would filter logs that match the key "proc_wget" set in the `/etc/audit/rules.d/` rules.
+
+Alternatives to auditd:
+
+- [Sysmon for Linux](https://github.com/microsoft/SysmonForLinux)
+- [Falco](https://falco.org/) – modern, FOSS, for containerized systems
+- [osquery](https://osquery.io/) – SQL-like usage
+
+#### Log handling:
 
 Let's say we have a firewall log like so:
 
