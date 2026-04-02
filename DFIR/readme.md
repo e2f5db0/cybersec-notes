@@ -84,6 +84,12 @@ Bash commands with a leading space will not be included in .bash_history. Shells
 
 `ausearch -i -k proc_wget` would filter logs that match the key "proc_wget" set in the `/etc/audit/rules.d/` rules.
 
+`ausearch -i -x whoami` – filters the results by the command name whoami
+
+`ausearch -i --pid 3095` – useful for creating process trees from parent process IDs
+
+`ausearch -i --ppid 3898 | grep proctitle` – list child processes of a parent process, filter the command line
+
 Alternatives to auditd:
 
 - [Sysmon for Linux](https://github.com/microsoft/SysmonForLinux)
