@@ -54,6 +54,22 @@
 
 `pgrep "<edr-or-sandbox>"`
 
+### Credentials & Sensitive Data
+
+`history | grep pass`
+
+`find / -name .env`
+
+`find /home -name id_rsa`
+
+### Cryptomining recon
+
+`cat /proc/cpuinfo`
+
+`lscpu | grep Model`
+
+`free -m`
+
 -----------------------------------------
 
 */etc/shadow* file prefixes (hash types)
