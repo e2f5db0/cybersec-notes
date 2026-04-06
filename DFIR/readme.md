@@ -86,6 +86,8 @@ Bash commands with a leading space will not be included in .bash_history. Shells
 
 `ausearch -i -x whoami` – filters the results by the command name whoami
 
+`ausearch -i -x nohup` – filters the results by the command nohup which allows processes to continue running after the attacker's ssh session is closed
+
 `ausearch -i --pid 3095` – useful for creating process trees from parent process IDs
 
 `ausearch -i --ppid 3898 | grep proctitle` – list child processes of a parent process, filter the command line
